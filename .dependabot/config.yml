@@ -1,0 +1,9 @@
+# This is an example with only required properties:
+version: 1
+update_configs:
+  - package_manager: "javascript"
+    directory: "/ui"
+    update_schedule: "live"
+  - package_manager: "python"
+    directory: "/requirements"
+    update_schedule: "live"

@@ -102,3 +102,7 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+.vault
+.idea/
+.reports/
+ui/node_modules/

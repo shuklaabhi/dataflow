@@ -1,0 +1,48 @@
+version: 2.1
+
+executors:
+  pyexecutor:
+    docker:
+      - image: circleci/python:3.7.2
+orbs:
+  codecov: codecov/codecov@1.0.5
+
+jobs:
+  pylint:
+    executor: pyexecutor
+    steps:
+      - checkout
+      # Download and cache dependencies
+      - restore_cache:
+          keys:
+            - venv_cache #venv
+      - run:
+          name: install dependencies
+          command: |
+            python3 -m venv venv
+            . venv/bin/activate
+            pip install --upgrade pip
+            pip install -r requirements/tests.txt
+      - run:
+          name: Run flake8 liniting
+          command: ./venv/bin/flake8
+      - run:
+          name: Run python unit tests
+          command:  ./venv/bin/python setup.py test
+      - run:
+          name: Code Quality to codacy
+          command:  ./venv/bin/python-codacy-coverage -r coverage.xml
+      - codecov/upload:
+          file: coverage/*.json
+          flags: backend,unittest
+      - save_cache:
+          paths:
+            - ./venv
+          key: venv_cache
+
+
+workflows:
+  version: 2.1
+  build:
+    jobs:
+      - pylint
