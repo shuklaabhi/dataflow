@@ -1,5 +1,5 @@
 -r common.txt
-pytest==5.2.2
+pytest==5.3.5
 flake8==3.7.9
 coverage==5.0a8
 pytest-cov==2.8.1
