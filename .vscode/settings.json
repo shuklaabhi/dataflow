@@ -1,3 +1,14 @@
 {
-    "python.pythonPath": "/Users/abhishek/workspace/xeneta/dataflow/venv/bin/python3"
+    "python.pythonPath": "venv/bin/python",
+    "workbench.editor.closeOnFileDelete": true,
+    "workbench.colorTheme": "Cobalt2",
+    "workbench.preferredDarkColorTheme": "Cobalt2",
+    "workbench.preferredLightColorTheme": "Visual Studio Light",
+    "debug.allowBreakpointsEverywhere": true,
+    "debug.enableAllHovers": true,
+    "debug.inlineValues": true,
+    "debug.showBreakpointsInOverviewRuler": true,
+    "terminal.integrated.confirmOnExit": true,
+    "terminal.integrated.cursorBlinking": true,
+    "remote.downloadExtensionsLocally": true
 }
